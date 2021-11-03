@@ -12,15 +12,15 @@ function love.load()
         local nom = {
             x = love.math.random(0,fwidth) - fwidth/2,
             y = love.math.random(0,fheight) - fheight/2,
+            r = love.math.random(5,25),
 
-            r = love.math.random(5,25)
+            c = {0,0,1}
         }
 
         local invalid = false
 
         for i,v in ipairs(nomnoms) do
-            love.graphics.setBackgroundColor(1,0,0)
-            invalid = invalid or ((nom.x + v.x)^2 + (nom.y + v.y)^2 < (nom.r + v.r)^2)
+            invalid = invalid or ((nom.x - v.x)^2 + (nom.y - v.y)^2 < (nom.r + v.r + 8)^2)
         end
 
         if not invalid then
@@ -44,11 +44,12 @@ end
 
 function love.draw()
     love.graphics.translate(width/2, height/2)
-
-    love.graphics.setColor(1,1,0)
     
     for i,v in ipairs(nomnoms) do
+        love.graphics.setColor(v.c)
         love.graphics.circle("fill", v.x,v.y, v.r)
     end
+
+    love.graphics.setColor(1,1,0)
     love.graphics.circle("fill", x,y, 30)
 end
