@@ -51,5 +51,5 @@ function love.draw()
     end
 
     love.graphics.setColor(1,1,0)
-    love.graphics.circle("fill", x,y, 30)
+    love.graphics.circle("fill", x,y, 15)
 end
