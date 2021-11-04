@@ -14,7 +14,11 @@ function love.load()
             y = love.math.random(0,fheight) - fheight/2,
             r = love.math.random(5,25),
 
-            c = {0,0,1}
+            c = {
+                love.math.random (0,100)/100,
+                0,
+                love.math.random (0,100)/100
+            }
         }
 
         local invalid = false
