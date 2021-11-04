@@ -20,7 +20,7 @@ function love.load()
         local invalid = false
 
         for i,v in ipairs(nomnoms) do
-            invalid = invalid or ((nom.x - v.x)^2 + (nom.y - v.y)^2 < (nom.r + v.r + 8)^2)
+            invalid = invalid or ((nom.x - v.x)^2 + (nom.y - v.y)^2 < (nom.r + v.r + 8)^2) or (nom.x^2 + nom.y^2 < (15 + 8)^2)
         end
 
         if not invalid then
