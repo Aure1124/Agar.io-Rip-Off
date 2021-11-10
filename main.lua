@@ -1,4 +1,4 @@
-local NOMNOMS_NUM = 1
+local NOMNOMS_NUM = 60
 local NOMNOMS_MIN_RADIUS = 5
 local NOMNOMS_MAX_RADIUS = 25
 
@@ -29,6 +29,9 @@ local width, height = love.graphics.getDimensions()
 
 local font = love.graphics.newFont(18)
 local big_font = love.graphics.newFont(64)
+
+local font = love.graphics.newFont(18)
+local bigger_font = love.graphics.newFont(65)
 
 local nomnoms = {}
 
